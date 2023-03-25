@@ -62,7 +62,7 @@ async def on_message(message):
             await message.channel.send(f"{group_name} 그룹을 찾을 수 없습니다.")
 
 
-@bot.command(name="그룹삭제")
+@bot.command(name="삭제")
 async def delete_group(ctx, group_name):
     # 그룹이 존재하는지 확인
     if group_name.lower() not in groups:
