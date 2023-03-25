@@ -30,7 +30,7 @@ async def on_message(message):
     if message.content == f'call':
         await message.channel.send("callback!")
     if message.content.startswith('!help'):
-        await message.channel.send(f"!그룹 '그룹명' '@사용자1' '@사용자2' ... - '그룹명으로 사용자를 추가하여 생성합니다 \n !호출 '그룹명' - 그룹에 포함된 사용자를 호출 합니다. \n !삭제 '그룹명' 그룹을 삭제합니다")
+        await message.channel.send(f" !그룹 '그룹명' '@사용자1' '@사용자2' ... - '그룹명으로 사용자를 추가하여 생성합니다 \n !호출 '그룹명' - 그룹에 포함된 사용자를 호출 합니다. \n !삭제 '그룹명' 그룹을 삭제합니다")
 
     if message.content.startswith('집합') or message.content.startswith('ㅈㅎ') or message.content.startswith(
             'wlqgkq') or message.content.startswith('wg'):
