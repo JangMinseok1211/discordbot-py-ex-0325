@@ -31,6 +31,7 @@ async def on_message(message):
         user_name = str(message.author)
         await message.delete()
         await message.channel.send(f'{user_name[:-5]} 님이 집합 시킵니다. @everyone')
+        
     # 메시지가 !그룹으로 시작하면 새로운 그룹을 추가
     if message.content.startswith('!그룹'):
         # 메시지에서 그룹명과 사용자 이름들 추출
