@@ -25,17 +25,17 @@ async def on_message(message):
         await message.delete()
         await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
         
-            if message.content.startswith(f'ㅈㅎ'):
-        await message.delete()
-        await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
+if message.content.startswith(f'ㅈㅎ'):
+    await message.delete()
+    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
         
-            if message.content.startswith(f'wg'):
-        await message.delete()
-        await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
+if message.content.startswith(f'wg'):
+    await message.delete()
+    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
         
-            if message.content.startswith(f'wlqgkq'):
-        await message.delete()
-        await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
+if message.content.startswith(f'wlqgkq'):
+    await message.delete()
+    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
         
 try:
     client.run(TOKEN)
