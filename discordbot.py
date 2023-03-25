@@ -22,7 +22,8 @@ async def on_message(message):
         await mesaage.channel.send("callback!")
         
     if message.content.startswith(f'집합'):
-        await message.channel.send('집합. @everyone')
+        await message.delete()
+        await message.channel.send('{mesaage.author.metion} 님이 집합 시킵니다. @everyone')
 try:
     client.run(TOKEN)
 except discord.errors.LoginFailure as e:
