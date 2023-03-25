@@ -79,6 +79,23 @@ async def on_message(message):
         else:
             await message.channel.send(f"{group_name} 그룹을 삭제했습니다.")
 
+    if message.content.startswith('!추가'):
+        group_name = message.content.split()[1]
+        # 그룹이 존재하는지 확인
+        if group_name.lower() not in group_dict:
+            message.channel.send(f"{group_name} 그룹이 존재하지 않습니다.")
+            return
+
+        # 사용자가 이미 그룹에 있는지 확인
+        if user_name.lower() in group_dict[group_name.lower()]:
+            message.channel.send(f"{user_name} 사용자는 이미 {group_name} 그룹에 속해 있습니다.")
+            return
+
+        # 그룹에 사용자 추가
+        group_dict[group_name.lower()].append(user_name.lower())
+
+        message.channel.send(f"{user_name} 사용자를 {group_name} 그룹에 추가했습니다.")
+
 
 try:
     client.run(TOKEN)
