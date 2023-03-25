@@ -20,7 +20,6 @@ async def user_message(message):
     if message.author == client.user:
         return
     if message.content.startswith(f'집합'):
-        await message.channel.delete()
         await message.channel.send('{message.author.mention} 님이 집합 시킵니다. @everyone')
 try:
     client.run(TOKEN)
