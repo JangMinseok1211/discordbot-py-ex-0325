@@ -17,7 +17,7 @@ async def on_ready():
 
 @client.event
 async def user_message(message):
-    if message.author client.user:
+    if message.author == client.user:
         return
     if message.content.startswith(f'집합'):
         await message.channel.delete()
