@@ -15,18 +15,22 @@ async def on_ready():
     print(f'Logged in as {client.user}.')
 
 @client.event
-async def on_message(message):
-    if message.author == client.user:
-        return
-    if message.content.startswith(f'{PREFIX}집합'):
-        await massage.delete()
-        await message.channel.send('집합. @everyone')
-        
-    if message.content.startswith(f'{PREFIX}ㅈㅎ'):
-        await massage.delete()
-        await message.channel.send('집합. @everyone')
-
-
+      
+if "집합" in message.content:
+    await message.delete()
+    await message.channel.send(f"{message.author.mention} 님이 집합 시킵니다. @everyone")
+    
+if "ㅈㅎ" in message.content:
+    await message.delete()
+    await message.channel.send(f"{message.author.mention} 님이 집합 시킵니다. @everyone")
+    
+if "wg" in message.content:
+    await message.delete()
+    await message.channel.send(f"{message.author.mention} 님이 집합 시킵니다. @everyone")
+    
+if "wlqgkq" in message.content:
+    await message.delete()
+    await message.channel.send(f"{message.author.mention} 님이 집합 시킵니다. @everyone")
 
 try:
     client.run(TOKEN)
