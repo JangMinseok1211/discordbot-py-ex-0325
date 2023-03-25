@@ -24,7 +24,7 @@ async def on_message(message):
     if message.content.startswith('집합') or message.content.startswith('ㅈㅎ') or message.content.startswith('wlqgkq') or message.content.startswith('wg'):
         user_name = str(message.author)
         await message.delete()
-        await message.channel.send(f'({user_name[:-5]} 님이 집합 시킵니다. @everyone')
+        await message.channel.send(f'{user_name[:-5]} 님이 집합 시킵니다. @everyone')
         
 try:
     client.run(TOKEN)
