@@ -18,9 +18,14 @@ async def on_ready():
 async def on_message(message):
     if message.author == client.user:
         return
-    if message.content.startswith(f'{PREFIX}집합'||f'{PREFIX}ㅈㅎ'||f'{PREFIX}'):
+    if message.content.startswith(f'{PREFIX}집합'):
         await massage.delete()
         await message.channel.send('집합. @everyone')
+        
+    if message.content.startswith(f'{PREFIX}ㅈㅎ'):
+        await massage.delete()
+        await message.channel.send('집합. @everyone')
+
 
 
 try:
