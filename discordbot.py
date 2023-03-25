@@ -11,8 +11,9 @@ TOKEN = os.environ['TOKEN']
 
 client = discord.Client()
 
-#그룹 과 그룹에 속한 사람들을 저장할 딕셔너리
-group_dict={}
+# 그룹 과 그룹에 속한 사람들을 저장할 딕셔너리
+group_dict = {}
+
 
 @client.event
 async def on_ready():
@@ -31,7 +32,7 @@ async def on_message(message):
         user_name = str(message.author)
         await message.delete()
         await message.channel.send(f'{user_name[:-5]} 님이 집합 시킵니다. @everyone')
-        
+
     # 메시지가 !그룹으로 시작하면 새로운 그룹을 추가
     if message.content.startswith('!그룹'):
         # 메시지에서 그룹명과 사용자 이름들 추출
@@ -56,8 +57,9 @@ async def on_message(message):
             await message.channel.send(f"{group_name} 그룹의 멤버: {mention_str}")
         else:
             await message.channel.send(f"{group_name} 그룹을 찾을 수 없습니다.")
-            
-@bot.command(name="그룹삭제")
+
+
+@client.command(name="그룹삭제")
 async def delete_group(ctx, group_name):
     # 그룹이 존재하는지 확인
     if group_name.lower() not in groups:
