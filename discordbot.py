@@ -21,21 +21,9 @@ async def on_message(message):
     if message.content == f'call':
         await mesaage.channel.send("callback!")
         
-    if message.content.startswith(f'집합'):
+    if message.content.startswith('집합')or message.content.startswith('ㅈㅎ') or message.content.startswith('wlqgkq') or message.content.startswith('wg'):
         await message.delete()
         await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
-        
-if message.content.startswith(f'ㅈㅎ'):
-    await message.delete()
-    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
-        
-if message.content.startswith(f'wg'):
-    await message.delete()
-    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
-        
-if message.content.startswith(f'wlqgkq'):
-    await message.delete()
-    await message.channel.send(f'{message.author.mention} 님이 집합 시킵니다. @everyone')
         
 try:
     client.run(TOKEN)
