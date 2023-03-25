@@ -56,7 +56,7 @@ async def on_message(message):
             people = group_dict[group_name]
 
             # 사용자 이름들을 멘션하여 메시지 보내기
-            mention_str = ' '.join([f'<@{p}>' for p in people])
+            mention_str = ' '.join([f'<{p}>' for p in people])
             await message.channel.send(f"{group_name} 그룹의 멤버: {mention_str}")
         else:
             await message.channel.send(f"{group_name} 그룹을 찾을 수 없습니다.")
