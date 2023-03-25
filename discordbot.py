@@ -56,6 +56,25 @@ async def on_message(message):
             await message.channel.send(f"{group_name} 그룹의 멤버: {mention_str}")
         else:
             await message.channel.send(f"{group_name} 그룹을 찾을 수 없습니다.")
+            
+@bot.command(name="그룹삭제")
+async def delete_group(ctx, group_name):
+    # 그룹이 존재하는지 확인
+    if group_name.lower() not in groups:
+        await ctx.send(f"{group_name} 그룹이 존재하지 않습니다.")
+        return
+
+    # 그룹에서 멘션할 사용자 목록 가져오기
+    mention_list = [f"<{user}>" for user in groups[group_name.lower()]]
+
+    # 그룹 삭제
+    del groups[group_name.lower()]
+
+    # 멘션할 사용자가 있을 경우, 메시지 보내기
+    if mention_list:
+        await ctx.send(f"{group_name} 그룹에서 {', '.join(mention_list)}를 삭제했습니다.")
+    else:
+        await ctx.send(f"{group_name} 그룹을 삭제했습니다.")
 
 
 try:
