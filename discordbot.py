@@ -5,6 +5,8 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import os
 
+bot = commands.Bot(command_prefix='!')
+
 load_dotenv()
 
 PREFIX = os.environ['PREFIX']
