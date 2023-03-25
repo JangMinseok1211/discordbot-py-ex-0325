@@ -62,6 +62,7 @@ async def on_message(message):
             await message.channel.send(f"{group_name} 그룹을 찾을 수 없습니다.")
 
     if message.content.startswith('!삭제'):
+        group_name = message.content.split()[1]
         if group_name.lower() not in group_dict:
             await message.channel.send(f"{group_name} 그룹이 존재하지 않습니다.")
             return
