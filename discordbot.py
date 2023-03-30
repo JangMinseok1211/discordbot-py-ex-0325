@@ -30,7 +30,7 @@ async def on_message(message):
     if message.content == f'call':
         await message.channel.send("callback!")
     if message.content.startswith('!help'):
-        await message.channel.send(f" !그룹 '그룹명' '@사용자1' '@사용자2' ... - 그룹명으로 사용자를 추가하여 생성합니다 \n!호출 '그룹명' - 그룹에 포함된 사용자를 호출 합니다. \n!삭제 '그룹명' - 그룹을 삭제합니다")
+        await message.channel.send(f"!그룹 '그룹명' '@사용자1' '@사용자2' ... - 그룹명으로 사용자를 추가하여 생성합니다 \n!호출 '그룹명' - 그룹에 포함된 사용자를 호출 합니다. \n!삭제 '그룹명' - 그룹을 삭제합니다")
 
     if message.content.startswith('집합') or message.content.startswith('ㅈㅎ') or message.content.startswith(
             'wlqgkq') or message.content.startswith('wg'):
@@ -52,6 +52,7 @@ async def on_message(message):
     if message.content.startswith('!호출'):
         # 메시지에서 그룹명 추출
         group_name = message.content.split()[1]
+        #!호출 그룹명 일경우 그룹명을 가져오기
 
         # 그룹명에 해당하는 사용자 이름들 추출
         if group_name in group_dict:
@@ -81,7 +82,12 @@ async def on_message(message):
         else:
             await message.channel.send(f"{group_name} 그룹을 삭제했습니다.")
    
-
+    if message.content.startswith("!목록"):
+        for key, values in group_dict.items():
+            await message.channel.send(fd"{key} : {values}")
+        #await message.channel.send(f"{group_dict.items()}")
+            
+        
 
 try:
     client.run(TOKEN)
