@@ -82,10 +82,6 @@ async def on_message(message):
         else:
             await message.channel.send(f"{group_name} 그룹을 삭제했습니다.")
    
-    if message.content.startswith("!목록"):
-        for key, values in group_dict.items():
-            await message.channel.send(fd"{key} : {values}")
-        #await message.channel.send(f"{group_dict.items()}")
             
         
 
